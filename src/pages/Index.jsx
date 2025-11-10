@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Shield, Scan, Users, Heart } from "lucide-react";
+import { Scan, Users, Heart } from "lucide-react";
+import logo from "@/assets/sem-risco-logo.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -23,9 +24,7 @@ const Index = () => {
         <div className="relative container max-w-6xl mx-auto px-4 py-16 md:py-24">
           <div className="text-center space-y-8 max-w-3xl mx-auto">
             <div className="flex justify-center">
-              <div className="h-24 w-24 rounded-3xl bg-primary flex items-center justify-center shadow-lg">
-                <Shield className="h-12 w-12 text-primary-foreground" />
-              </div>
+              <img src={logo} alt="Sem Risco Logo" className="h-32 w-32 drop-shadow-lg" />
             </div>
 
             <div className="space-y-4">

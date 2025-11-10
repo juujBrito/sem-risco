@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Shield, Camera, User, ScanLine } from "lucide-react";
+import { Camera, User, ScanLine } from "lucide-react";
 import { toast } from "sonner";
+import logo from "@/assets/sem-risco-logo.png";
 
 const Scanner = () => {
   const navigate = useNavigate();
@@ -34,15 +35,16 @@ const Scanner = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="p-6 flex items-center justify-between border-b">
-        <div className="flex items-center gap-2">
-          <Shield className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold">Sem Risco</span>
+      <header className="p-6 flex items-center justify-between border-b bg-primary">
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="Sem Risco" className="h-10 w-10" />
+          <span className="text-xl font-bold text-primary-foreground">Sem Risco</span>
         </div>
         <Button
           variant="ghost"
           size="icon"
           onClick={() => navigate("/profile")}
+          className="text-primary-foreground hover:bg-primary-foreground/10"
         >
           <User className="h-5 w-5" />
         </Button>
