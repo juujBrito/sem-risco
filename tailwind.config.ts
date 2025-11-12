@@ -13,9 +13,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ['Montserrat', 'system-ui', 'sans-serif'],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -25,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -53,27 +51,12 @@ export default {
         safe: {
           DEFAULT: "hsl(var(--safe))",
           foreground: "hsl(var(--safe-foreground))",
-          light: "hsl(var(--safe-light))",
+          bg: "hsl(var(--safe-bg))",
         },
         unsafe: {
           DEFAULT: "hsl(var(--unsafe))",
           foreground: "hsl(var(--unsafe-foreground))",
-          light: "hsl(var(--unsafe-light))",
-        },
-        warning: {
-          DEFAULT: "hsl(var(--warning))",
-          foreground: "hsl(var(--warning-foreground))",
-          light: "hsl(var(--warning-light))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+          bg: "hsl(var(--unsafe-bg))",
         },
       },
       borderRadius: {
