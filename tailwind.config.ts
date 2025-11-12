@@ -22,7 +22,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -39,6 +38,8 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          safe: "hsl(var(--accent-safe))",
+          unsafe: "hsl(var(--accent-unsafe))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -47,16 +48,6 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        safe: {
-          DEFAULT: "hsl(var(--safe))",
-          foreground: "hsl(var(--safe-foreground))",
-          bg: "hsl(var(--safe-bg))",
-        },
-        unsafe: {
-          DEFAULT: "hsl(var(--unsafe))",
-          foreground: "hsl(var(--unsafe-foreground))",
-          bg: "hsl(var(--unsafe-bg))",
         },
       },
       borderRadius: {

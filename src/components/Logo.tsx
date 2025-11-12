@@ -1,38 +1,38 @@
-import { Shield, Heart } from "lucide-react";
+import { motion } from 'framer-motion';
 
 interface LogoProps {
-  size?: "sm" | "md" | "lg";
-  showText?: boolean;
+  size?: number;
+  className?: string;
 }
 
-export const Logo = ({ size = "md", showText = true }: LogoProps) => {
-  const sizes = {
-    sm: { shield: 40, heart: 20, text: "text-lg" },
-    md: { shield: 80, heart: 40, text: "text-3xl" },
-    lg: { shield: 120, heart: 60, text: "text-5xl" }
-  };
-
-  const currentSize = sizes[size];
-
+export const Logo = ({ size = 80, className = '' }: LogoProps) => {
   return (
-    <div className="flex flex-col items-center gap-3">
-      <div className="relative inline-flex items-center justify-center">
-        <Shield
-          className="text-primary fill-primary"
-          size={currentSize.shield}
-          strokeWidth={1.5}
-        />
-        <Heart
-          className="absolute text-white fill-white"
-          size={currentSize.heart}
-          strokeWidth={0}
-        />
-      </div>
-      {showText && (
-        <h1 className={`font-bold text-foreground ${currentSize.text}`}>
-          Sem Risco
-        </h1>
-      )}
-    </div>
+    <motion.svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      className={className}
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
+      {/* Shield Background */}
+      <motion.path
+        d="M50 5 L85 20 L85 50 Q85 80 50 95 Q15 80 15 50 L15 20 Z"
+        fill="hsl(var(--primary))"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+      />
+      
+      {/* Heart */}
+      <motion.path
+        d="M50 75 Q30 55 30 45 Q30 35 37.5 35 Q45 35 50 42 Q55 35 62.5 35 Q70 35 70 45 Q70 55 50 75 Z"
+        fill="white"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.5, duration: 0.5, ease: 'easeOut' }}
+      />
+    </motion.svg>
   );
 };

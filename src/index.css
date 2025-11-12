@@ -8,97 +8,87 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Sem Risco Brand Colors - All HSL */
+    /* Sem Risco Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 0 0% 20%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
-
+    --foreground: 210 11% 11%;
+    
+    --card: 0 0% 95%;
+    --card-foreground: 210 11% 11%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
-
-    /* Brand Orange - Primary Action Color */
+    --popover-foreground: 210 11% 11%;
+    
+    /* Primary: Brand Orange #FFA500 */
     --primary: 39 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 39 100% 45%;
-
-    /* Safety Green - Safe Result */
-    --safe: 134 61% 41%;
-    --safe-foreground: 0 0% 100%;
-    --safe-bg: 134 61% 95%;
-
-    /* Risk Red - Unsafe Result */
-    --unsafe: 354 70% 54%;
-    --unsafe-foreground: 0 0% 100%;
-    --unsafe-bg: 354 70% 95%;
-
-    /* Secondary & Muted */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 20%;
-
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-
+    
+    /* Secondary: Light Grey Cards */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 210 11% 11%;
+    
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 54%;
+    
     --accent: 39 100% 50%;
     --accent-foreground: 0 0% 100%;
-
+    
+    /* Safe/Unsafe Accents */
+    --accent-safe: 134 61% 41%;
+    --accent-unsafe: 354 70% 54%;
+    
     --destructive: 354 70% 54%;
     --destructive-foreground: 0 0% 100%;
-
+    
     --border: 0 0% 90%;
     --input: 0 0% 90%;
     --ring: 39 100% 50%;
-
-    --radius: 0.75rem;
-
+    
+    --radius: 0.5rem;
+    
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(39 100% 50%), hsl(39 100% 60%));
     --gradient-safe: linear-gradient(135deg, hsl(134 61% 41%), hsl(134 61% 51%));
     --gradient-unsafe: linear-gradient(135deg, hsl(354 70% 54%), hsl(354 70% 64%));
-
+    
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
+    --shadow-sm: 0 2px 8px hsl(39 100% 50% / 0.1);
+    --shadow-md: 0 4px 16px hsl(39 100% 50% / 0.15);
+    --shadow-lg: 0 8px 24px hsl(39 100% 50% / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
-
+    --background: 210 11% 11%;
+    --foreground: 0 0% 98%;
+    
+    --card: 210 11% 15%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 210 11% 15%;
+    --popover-foreground: 0 0% 98%;
+    
     --primary: 39 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 39 100% 45%;
-
-    --safe: 134 61% 41%;
-    --safe-foreground: 0 0% 100%;
-    --safe-bg: 134 61% 15%;
-
-    --unsafe: 354 70% 54%;
-    --unsafe-foreground: 0 0% 100%;
-    --unsafe-bg: 354 70% 15%;
-
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 95%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-
+    
+    --secondary: 210 11% 20%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 210 11% 20%;
+    --muted-foreground: 0 0% 65%;
+    
     --accent: 39 100% 50%;
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 354 70% 54%;
+    
+    --accent-safe: 134 61% 51%;
+    --accent-unsafe: 354 70% 64%;
+    
+    --destructive: 354 70% 64%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    
+    --border: 210 11% 25%;
+    --input: 210 11% 25%;
     --ring: 39 100% 50%;
   }
 }
@@ -109,6 +99,13 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  @supports (font-variation-settings: normal) {
+    body {
+      font-family: 'Inter var', system-ui, -apple-system, sans-serif;
+    }
   }
 }
