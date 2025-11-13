@@ -17,18 +17,18 @@ export const Logo = ({ size = 80, className = "" }: LogoProps) => {
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* Shield Base */}
+      {/* Shield Base - Heater shield style with flat top, curved sides, pointed bottom */}
       <motion.path
-        d="M256 32L64 96v128c0 141.4 93.1 259.9 192 288 98.9-28.1 192-146.6 192-288V96L256 32z"
+        d="M256 80 C256 80, 140 80, 120 100 C100 120, 100 200, 100 240 C100 320, 180 420, 256 460 C332 420, 412 320, 412 240 C412 200, 412 120, 392 100 C372 80, 256 80, 256 80 Z"
         fill="#FF7622"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
+        stroke="none"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
         transition={{ duration: 1, ease: "easeInOut" }}
       />
-
-      {/* Heart Cutout (white negative space) */}
+      {/* Heart Cutout (white negative space) - centered within shield */}
       <motion.path
-        d="M256 344l-88-80c-28-26-32-72-4-100 22-22 58-22 80 0l12 12 12-12c22-22 58-22 80 0 28 28 24 74-4 100l-88 80z"
+        d="M256 320 L206 275 C186 257, 184 228, 202 210 C216 196, 238 196, 252 210 L256 214 L260 210 C274 196, 296 196, 310 210 C328 228, 326 257, 306 275 L256 320 Z"
         fill="#FFFFFF"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
