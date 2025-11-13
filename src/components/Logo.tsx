@@ -17,10 +17,11 @@ export const Logo = ({ size = 80, className = "" }: LogoProps) => {
       animate="visible"
     >
       {/* SHIELD LAYER 
-        Shape: Heater Shield with rounded top corners and acute bottom tip
+        FIX: The top edge now uses a Bezier curve (C) to create the 
+        "brace" shape (hump in the middle) instead of a flat line.
       */}
       <motion.path
-        d="M256 472C256 472 448 384 448 136C448 96 448 80 448 64C448 46.3 433.7 32 416 32H96C78.3 32 64 46.3 64 64C64 80 64 96 64 136C64 384 256 472 256 472Z"
+        d="M256 48C212 48 130 68 64 96C64 200 110 360 256 480C402 360 448 200 448 96C382 68 300 48 256 48Z"
         fill="#FF7622"
         stroke="none"
         variants={{
@@ -34,14 +35,13 @@ export const Logo = ({ size = 80, className = "" }: LogoProps) => {
       />
 
       {/* HEART LAYER 
-        Shape: Geometric heart centered on the shield
+        Centered and balanced within the new shield shape
       */}
       <motion.path
-        d="M256 320.6L235.6 302C163.2 236.4 115.4 193.2 115.4 140.2C115.4 97 149.4 63 192.6 63C217 63 240.4 74.4 256 92.6C271.6 74.4 295 63 319.4 63C362.6 63 396.6 97 396.6 140.2C396.6 193.2 348.8 236.4 276.4 302L256 320.6Z"
+        d="M256 336L234 316C156 245 104 198 104 140C104 92 141 56 189 56C216 56 242 68 256 89C270 68 296 56 323 56C371 56 408 92 408 140C408 198 356 245 278 316L256 336Z"
         fill="#FFFFFF"
-        // We center the heart path relative to the viewbox 
-        // (The path above is native to ~512, but we shift it down slightly to optical center)
-        style={{ transformOrigin: "center", translateY: 40 }} 
+        // Shifted down slightly (translateY: 30) to sit optically in the "belly" of the shield
+        style={{ transformOrigin: "center", translateY: 30 }} 
         variants={{
           hidden: { scale: 0, opacity: 0 },
           visible: { 
