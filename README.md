@@ -1,6 +1,6 @@
 # 🛡️ Sem Risco
 
-[**View Live Demo / Ver Demo Online**](https://juujbrito.github.io/sem-risco/)
+[**View Live Demo / Ver Demo Online**](https://britojoao2000.github.io/sem-risco/)
 
 ---
 
