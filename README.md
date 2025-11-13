@@ -1,73 +1,45 @@
-# Welcome to your Lovable project
+# 🛡️ Sem Risco
 
-## Project info
+[**View Live Demo / Ver Demo Online**](https://juujbrito.github.io/sem-risco/)
 
-**URL**: https://lovable.dev/projects/c92eba9f-823d-4ed3-b20e-e715fe7643f5
+---
 
-## How can I edit this code?
+## 🇺🇸 English
 
-There are several ways of editing your application.
+**Your trusted companion for safe eating.**
 
-**Use Lovable**
+**Sem Risco** (Without Risk) is a 100% client-side Progressive Web App (PWA) designed to help people with allergies, intolerances, or religious dietary restrictions.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c92eba9f-823d-4ed3-b20e-e715fe7643f5) and start prompting.
+### Core Features
+* **Personalized Protection:** Custom profiles for allergies (e.g., Peanuts), intolerances (e.g., Gluten), and lifestyles (e.g., Vegan, Halal).
+* **Smart Scanning (Simulated):** Instant "Safe" or "Unsafe" feedback via camera (AI photo analysis) or barcode scanning.
+* **Privacy First:** All data is stored locally on your device.
+* **Freemium Model:** Demonstrates a business model with Free and Premium tiers (simulated locally).
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🛠️ Tech Stack
+* **Core:** React, TypeScript, Vite
+* **Styling:** Tailwind CSS, shadcn/ui
+* **Animations:** Framer Motion
+* **Data & Storage:** IndexedDB (via Dexie.js) for complex data, localStorage for settings.
+* **Hosting:** GitHub Pages (Static Deployment)
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🇧🇷 Português
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Seu companheiro de confiança para uma alimentação segura.**
 
-Follow these steps:
+**Sem Risco** é um Progressive Web App (PWA) 100% client-side, projetado para ajudar pessoas com alergias, intolerâncias ou restrições alimentares religiosas.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Funcionalidades Principais
+* **Proteção Personalizada:** Perfis customizados para alergias (ex: Amendoim), intolerâncias (ex: Glúten) e estilos de vida (ex: Vegano, Halal).
+* **Scanner Inteligente (Simulado):** Feedback instantâneo de "Seguro" ou "Não Seguro" via câmera (análise de foto por IA) ou código de barras.
+* **Privacidade em Primeiro Lugar:** Todos os dados são armazenados localmente no seu dispositivo.
+* **Modelo Freemium:** Demonstração de um modelo de negócios com planos Gratuito e Premium (simulado localmente).
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/c92eba9f-823d-4ed3-b20e-e715fe7643f5) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### 🛠️ Tecnologias Utilizadas
+* **Core:** React, TypeScript, Vite
+* **Estilização:** Tailwind CSS, shadcn/ui
+* **Animações:** Framer Motion
+* **Dados e Armazenamento:** IndexedDB (via Dexie.js) para dados complexos, localStorage para configurações.
+* **Hospedagem:** GitHub Pages (Deploy Estático)

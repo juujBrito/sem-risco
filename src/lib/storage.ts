@@ -1,10 +1,33 @@
+export type PlanType = 'free' | 'plus' | 'premium';
+
 export interface AppSettings {
   activeProfileId: string;
-  plan: 'free' | 'premium';
+  plan: PlanType;
   scanCount: number;
   lastScanDate: string;
   geminiApiKey?: string;
 }
+
+export const PLAN_LIMITS = {
+  free: {
+    scansPerMonth: 10,
+    historyLimit: 5,
+    price: 0,
+    features: ['10 scans por mês', 'Últimos 5 itens do histórico', 'Análise básica'],
+  },
+  plus: {
+    scansPerMonth: 50,
+    historyLimit: 30,
+    price: 9.90,
+    features: ['50 scans por mês', 'Últimos 30 itens do histórico', 'Análise detalhada', 'Sem anúncios'],
+  },
+  premium: {
+    scansPerMonth: Infinity,
+    historyLimit: Infinity,
+    price: 19.90,
+    features: ['Scans ilimitados', 'Histórico completo', 'Análise avançada com IA', 'Sem anúncios', 'Suporte prioritário', 'Alertas personalizados'],
+  },
+} as const;
 
 const STORAGE_KEY = 'semRisco.appSettings';
 

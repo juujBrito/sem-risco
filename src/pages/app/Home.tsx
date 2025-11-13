@@ -3,7 +3,7 @@ import { Logo } from '@/components/Logo';
 import { motion } from 'framer-motion';
 import { Camera, Scan } from 'lucide-react';
 import { BottomNav } from '@/components/BottomNav';
-import { getSettings, resetMonthlyScanCount, saveSettings } from '@/lib/storage';
+import { getSettings, resetMonthlyScanCount, saveSettings, PLAN_LIMITS } from '@/lib/storage';
 import { useEffect, useState } from 'react';
 import { db } from '@/lib/db';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -49,7 +49,8 @@ const Home = () => {
     if (!settings || !profile) return;
 
     // Freemium gate check
-    if (settings.plan === 'free' && settings.scanCount >= 10) {
+    const planLimits = PLAN_LIMITS[settings.plan];
+    if (settings.scanCount >= planLimits.scansPerMonth) {
       setShowUpgrade(true);
       return;
     }
@@ -158,7 +159,7 @@ const Home = () => {
           </motion.div>
         </motion.div>
         
-        {settings?.plan === 'free' && (
+        {settings?.plan !== 'premium' && (
           <motion.div
             className="w-full max-w-sm text-center text-sm text-muted-foreground"
             initial={{ opacity: 0 }}
@@ -166,7 +167,7 @@ const Home = () => {
             transition={{ delay: 0.5 }}
           >
             <p>
-              {settings.scanCount} de 10 scans usados este mês
+              {settings.scanCount} de {PLAN_LIMITS[settings.plan].scansPerMonth} scans usados este mês
             </p>
           </motion.div>
         )}

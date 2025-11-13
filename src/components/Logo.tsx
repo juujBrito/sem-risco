@@ -1,40 +1,37 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 interface LogoProps {
   size?: number;
   className?: string;
 }
 
-export const Logo = ({ size = 80, className = '' }: LogoProps) => {
+export const Logo = ({ size = 80, className = "" }: LogoProps) => {
   return (
     <motion.svg
       width={size}
       height={size}
-      viewBox="0 0 100 100"
+      viewBox="0 0 512 512"
       className={className}
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      {/* Shield Background*/}
+      {/* Shield Background */}
       <motion.path
-        d="M15 25 Q50 10 85 25 V45 Q85 80 50 95 Q15 80 15 45 Z"
-        fill="#FF7622" // Specific orange color from the "Sem Risco" branding
+        d="M256 32L64 96v128c0 141.4 93.1 259.9 192 288 98.9-28.1 192-146.6 192-288V96L256 32z"
+        fill="#FF7622"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       />
-      
-      {/* Heart*/}
+
+      {/* Heart Cutout */}
       <motion.path
-        d="M50 72 C30 55 25 40 38 32 C44 28 50 35 50 35 C50 35 56 28 62 32 C75 40 70 55 50 72 Z"
+        d="M256 344l-88-80c-28-26-32-72-4-100 22-22 58-22 80 0l12 12 12-12c22-22 58-22 80 0 28 28 24 74-4 100l-88 80z"
         fill="white"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinejoin="round"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 0.5, duration: 0.5, ease: 'easeOut' }}
+        transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
       />
     </motion.svg>
   );

@@ -2,7 +2,7 @@ import { BottomNav } from '@/components/BottomNav';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { getSettings } from '@/lib/storage';
+import { getSettings, PLAN_LIMITS } from '@/lib/storage';
 import { db } from '@/lib/db';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { CheckCircle, XCircle, Crown } from 'lucide-react';
@@ -24,11 +24,13 @@ const History = () => {
     [settings?.activeProfileId]
   );
   
-  const displayHistory = settings?.plan === 'premium' 
+  const currentPlan = settings?.plan || 'free';
+  const historyLimit = PLAN_LIMITS[currentPlan].historyLimit;
+  const displayHistory = historyLimit === Infinity
     ? history 
-    : history?.slice(0, 5);
+    : history?.slice(0, historyLimit);
   
-  const hasMore = history && history.length > 5 && settings?.plan === 'free';
+  const hasMore = history && history.length > historyLimit && historyLimit !== Infinity;
   
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -105,10 +107,13 @@ const History = () => {
                 <Card className="p-6 text-center bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
                   <Crown className="mx-auto mb-3 text-primary" size={32} />
                   <h3 className="font-bold text-foreground mb-2">
-                    Upgrade para Premium
+                    {currentPlan === 'free' ? 'Upgrade seu Plano' : 'Upgrade para Premium'}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Veja seu histórico completo de scans
+                    {currentPlan === 'free' 
+                      ? 'Tenha acesso a mais histórico ou histórico completo' 
+                      : 'Veja seu histórico completo de scans'
+                    }
                   </p>
                   <Button
                     onClick={() => navigate('/app/profile')}
